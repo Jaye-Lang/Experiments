@@ -1,0 +1,25 @@
+import("std")
+import("tokens.jaye")
+
+const Lexer: struct = {
+    val source: vector<char>,
+    var current: uint,
+}
+
+const lexerNew: Lexer(s: string) = {
+    return Lexer {
+        source: split(s, ""),
+        current: 0
+    }
+}
+
+const lex: void(ls: Lexer) = {
+    var tokens: vector<Tok> = {}
+
+    while(ls.current < len(ls.source)) {
+        val c: char = ls.source[ls.current]
+        switch(c) {
+            "=": push(tokens, Tok{Assign, "="})  
+        }
+    }
+}
